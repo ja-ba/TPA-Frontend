@@ -48,7 +48,7 @@ isolated_build = True
 
 [testenv]
 commands =
-  pytest -s -m "not slow"
+  pytest -s
 deps =
     pytest>=7.0
 

@@ -1,0 +1,132 @@
+welcome_text:
+  Ger: >
+    ## ⛽ Willkommen zur Spritpreis App ⛽
+
+    In Zeiten steigender Spritpreise soll diese App Transparenz im deutschen Spritpreis Dschungel schaffen und dabei helfen billiger zu tanken. Dazu werden öffentlich verfügbare Daten (Nutzung der Open-Data Schnittstelle von [Tankerkönig](https://creativecommons.tankerkoenig.de/)) zu den Spritpreisen aller Tankstellen verarbeitet und für verschiedene interaktive Analysen bereitgestellt.
+
+    Aktuell unterstützt die App folgende Features:
+
+
+
+    *   **Prognose:** für jede Tankstelle in Deutschland wird der Spritpreisverlauf der nächsten 24h durch ein statistisches Echtzeit-Modell vorhergesagt. Neben den prognostizierten Preisen, sind auch die Einflussfaktoren ersichtlich. Dadurch ist einfach ersichtlich mit welchen Preisen Sie in nächster Zeit an einer bestimmten Tankstelle rechnen können und zu welchen Tages- und Uhrzeiten das Tanken an  dieser Tankstelle sich generell lohnt.
+
+    *   **Karten:** Auf einer Karte wird ersichtlich wie günstig oder teuer die Spritpreise in verschiedenen Regionen Deutschlands sind. Die Karte is beliebig zoombar und ermöglicht es bspw. die günstigste Tankstelle in einem Ort zu finden oder zu sehen in welchen Teilen Deutschlands das Tanken eher günstig/teuer ist. Die Karte ist auch für vergangene Wochen verfügbar um die Auswirkungen saisonaler Ereignisse (z.B. Ferienzeit oder Lieferengpässe durch niedrige FLussstände) zu sehen.
+
+    *   **Freie Analyse (comming soon):** Lassen Sie sich den Preisverlauf für bis zu 10 Tankstellen anzeigen und aggregieren und filtern Sie einfach nach Monaten, Wochen oder Tagen.
+
+
+    Viele Spaß bei der Nutzung der App!
+
+
+    Ich freue mich über Feedback, Hinweise auf Bugs und Verbesserungsvorschläge an : jakobs.dataprojects@gmail.com
+
+  Eng: >
+    ## ⛽ Welcome to the gasprice app ⛽
+
+    In times of rising gas prices, this app aims at making the german gas market more transparent and helping you to gas up more cheaply. To achieve this, opensource data (specifically the great API from  [Tankerkönig](https://creativecommons.tankerkoenig.de/)) on gas prices from all german gas stations is processed and used for various interactive insights.
+
+
+    At the moment, the app has the following features:
+
+
+
+    *   **Forecast:** for each german gas station, the price development is forecasted for the next 24 hours based on a stastical real-time model. Besides the forecasted prices, you can also see which factors influence the price developoment. With this information you know which prices to expect at your favorite gas station today and you also learn at which daytimes or weekdays you can gas-up for the cheapest prices.
+
+    *   **Maps:** A map shows you how expensive or cheap the gas prices are for different regions of germany. You can zoom into the map to find the cheapest gas stations in a town or explore which areas of Germany have the cheapest gas prices. The map is also available for past weeks, so that you can observe seasonal effects (e.g. holidays or supply-shortages due to low tides on german rivers)
+
+    *   **Free Deep Dive (comming soon):** Get past price developments for up to 10 gas stations and aggregate and filter on months, weeks and days.
+
+
+    I hope you enjoy using this app!
+
+
+    I'm looking forward to your feedback, bug reports and ideas for improvement at: jakobs.dataprojects@gmail.com
+
+sidebar_upper:
+  Ger :
+    Auswahl : 0
+    Wilkommen: "welcome"
+    Prognose: "forecast"
+    Karten (coming soon...): "maps"
+    Freie Analyse (coming soon...): "free"
+  Eng :
+    Selection : 0
+    Welcome: "welcome"
+    Forecast: "forecast"
+    Maps (coming soon...): "maps"
+    Free Deep Dive (coming soon...): "free"
+  symbols: ["house", "bar-chart-line", "map", "rulers"]
+
+sidebar_lower:
+  forecast:
+    Ger: ["Bitte wählen Sie eine Tankstelle aus? Tippen Sie einfach einen Namen, Ort oder PLZ in das Feld", "Sie können z.B, 'Shell Bonner Str.' eingeben um eine konkrete Tankstelle zu suchen oder '12057' eingeben um alle Tankstellen in diesem PLZ Gebiet angezeigt zu bekommen", "Bitte wählen Sie eine Sorte?", "Neue Tankstellen Suche"]
+    Eng: ["Please select a gas station by typing a name, location or postal code", "You can type e.g. 'Shell Bonner Str.' to search for a specific gas station or '12057' to show all gas stations in this postal code area", "Please select a gas type?", "New Gas Station Search"]
+  maps:
+    Ger: ["Bitte wählen Sie eine Woche aus!"]
+    Eng: ["Please select a week!"]
+
+forecast:
+  Ger:
+    please_choose: "Bitte wähle in der linken Leiste eine Tankstelle aus!"
+    tab_title1: "Prognose nächste 24h"
+    tab_title2: "Preiseinflüsse"
+    page_title_forecast: "### Wie wird sich der Preis in den nächsten 24h entwickeln?"
+    y_title: "Preis in €/Liter"
+    x_title: "Uhrzeit"
+    page_title_impact: "## Wodurch wird der Preis beeinflusst?"
+    y_title_barchart: "Preisdifferenz zum Durchschnitt"
+    chart_title_hour: "Preiseinfluss: Tageszeit"
+    x_title_hour: "Tageszeit"
+    chart_title_weekday: "Preiseinfluss: Wochentag"
+    chart_title_trend: "Langfristiger Trend"
+    x_title_trend: "Kalenderwoche"
+    legend_forecast: "Vorhersage Preis"
+    legend_yesterday: "Tatsächlicher Preis in letzten 24h"
+    legend_name: "Legende"
+    tbd11: "⚠️ Das hat leider nicht geklappt. Für die ausgewählte Tankstelle und/oder Sorte gibt es keine Daten. Bitte versuche eine andere Tankstelle oder Sorte! ⚠️"
+    tbd12: "⚡ Die Berechnung dieses Models hat "
+    tbd13: " Sekunden gedauert ⚡"
+
+
+  Eng:
+    please_choose: "Please select a gas station in the left sidebar!"
+    tab_title1: "Price forecast for the next 24h"
+    tab_title2: "Price influences"
+    page_title_forecast: "### How will the price develop in the next 24h?"
+    y_title: "Price in €/Liter"
+    x_title: "Time"
+    page_title_impact: "## What influences the price?"
+    y_title_barchart: "Price difference to the average"
+    chart_title_hour: "Price influence: Time of day"
+    x_title_hour: "Time of day"
+    chart_title_weekday: "Price influence: Weekday"
+    chart_title_trend: "Long-term trend"
+    x_title_trend: "Calendar week"
+    legend_forecast: "Forecasted price"
+    legend_yesterday: "Actual price in the last 24h"
+    legend_name: "Legend"
+    tbd11: "⚠️ Unfortunately, there is no data for the selected gas station and/or type. Please try another gas station or type! ⚠️"
+    tbd12: "⚡ The calculation of this model took "
+    tbd13: " seconds ⚡"
+
+markdown:
+  german_flag: >
+    <style>
+    div:nth-child(3) > div > div > label:nth-child(1) > div:nth-child(3) {
+      background-image: url("https://cdn-icons-png.flaticon.com/512/330/330523.png");
+      background-size: cover;
+      font-size: 0;
+      height: 30px;
+      width: 30px;
+    }
+    </style>
+  english_flag: >
+    <style>
+    div:nth-child(3) > div > div > label:nth-child(2) > div:nth-child(3) {
+      background-image: url("https://cdn-icons-png.flaticon.com/512/3013/3013911.png");
+      background-size: cover;
+      font-size: 0;
+      height: 30px;
+      width: 30px;
+    }
+    </style>

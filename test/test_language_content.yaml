@@ -1,0 +1,78 @@
+welcome_text:
+  Ger: >
+    ## TEST GERMAN
+  Eng: >
+    ## TEST ENGLISH
+sidebar_upper:
+  Ger :
+    Auswahl : 0
+    Wilkommen: "welcome"
+    Prognose: "forecast"
+    Karten: "maps"
+    Freie Analyse: "free"
+  Eng :
+    Selection : 0
+    Welcome: "welcome"
+    Forecast: "forecast"
+    Maps: "maps"
+    Free Deep Dive: "free"
+  symbols: ["house", "bar-chart-line", "map", "rulers"]
+
+sidebar_lower:
+  forecast:
+    Ger: ["Bitte wählen Sie eine Tankstelle aus? Tippen Sie einfach einen Namen, Ort oder PLZ in das Feld", "Sie können z.B, 'Shell Bonner Str.' eingeben um eine konkrete Tankstelle zu suchen oder '12057' eingeben um alle Tankstellen in diesem PLZ Gebiet angezeigt zu bekommen", "Bitte wählen Sie eine Sorte?", "Neue Tankstellen Suche"]
+    Eng: ["Bitte wählen Sie eine Tankstelle aus? Tippen Sie einfach einen Namen, Ort oder PLZ in das Feld", "Sie können z.B, 'Shell Bonner Str.' eingeben um eine konkrete Tankstelle zu suchen oder '12057' eingeben um alle Tankstellen in diesem PLZ Gebiet angezeigt zu bekommen", "Bitte wählen Sie eine Sorte?", "Neue Tankstellen Suche"]
+  maps:
+    Ger: ["Bitte wählen Sie eine Woche aus!"]
+    Eng: ["Bitte wählen Sie eine Woche aus!"]
+
+forecast:
+  Ger:
+    please_choose: "Bitte wähle in der linken Leiste eine Tankstelle aus!"
+    tab_title1: "Prognose nächste 24h"
+    tab_title2: "Preiseinflüsse"
+    page_title_forecast: "### Wie wird sich der Preis in den nächsten 24h entwickeln?"
+    y_title: "Preis in €/Liter"
+    x_title: "Uhrzeit"
+    page_title_impact: "## Wodurch wird der Preis beeinflusst?"
+    y_title_barchart: "Preisdifferenz zum Durchschnitt"
+    chart_title_hour: "Preiseinfluss: Tageszeit"
+    x_title_hour: "Tageszeit"
+    chart_title_weekday: "Preiseinfluss: Wochentag"
+    tbd7: "Wochentag"
+    chart_title_trend: "Langfristiger Trend"
+    x_title_trend: "Kalenderwoche"
+    legend_forecast: "Vorhersage Preis"
+    legend_yesterday: "Tatsächlicher Preis in letzten 24h"
+    legend_name: "Legende"
+    tbd11: "⚠️ Das hat leider nicht geklappt. Für die ausgewählte Tankstelle und/oder Sorte gibt es keine Daten. Bitte versuche eine andere Tankstelle oder Sorte! ⚠️"
+    tbd12: "⚡ Die Berechnung dieses Models hat "
+    tbd13: " Sekunden gedauert ⚡"
+
+
+  Eng: ["Bitte wähle in der linken Leiste eine Tankstelle aus!", "Prognose nächste 24h", "Preiseinflüsse", "Wie wird sich der Preis in den nächsten 24h entwickeln?", "Preis in €", "Uhrzeit",
+            "Wodurch wird der Preis beeinflusst?", "Preiseinfluss: Tageszeit", "Preisdifferenz zum Durchschnitt", "Tageszeit", "Preiseinfluss: Wochentag", "Wochentag",
+            "Preiseinfluss: langfristiger Trend", "Preis in €", "Kalenderwoche" , "Vorhersage Preis", 17: "Tatsächlicher Preis in letzten 24h", "Legende", "⚠️ Das hat leider nicht geklappt. Für die ausgewählte Tankstelle und/oder Sorte gibt es keine Daten. Bitte versuche eine andere Tankstelle oder Sorte! ⚠️",
+            "⚡ Die Berechnung dieses Models hat ", " Sekunden gedauert ⚡"  ]
+
+markdown:
+  german_flag: >
+    <style>
+    div:nth-child(3) > div > div > label:nth-child(1) > div:nth-child(3) {
+      background-image: url("https://cdn-icons-png.flaticon.com/512/330/330523.png");
+      background-size: cover;
+      font-size: 0;
+      height: 30px;
+      width: 30px;
+    }
+    </style>
+  english_flag: >
+    <style>
+    div:nth-child(3) > div > div > label:nth-child(2) > div:nth-child(3) {
+      background-image: url("https://cdn-icons-png.flaticon.com/512/3013/3013911.png");
+      background-size: cover;
+      font-size: 0;
+      height: 30px;
+      width: 30px;
+    }
+    </style>

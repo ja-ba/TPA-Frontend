@@ -52,9 +52,6 @@ def fill_main_frame(
             forecast_summary_dict = makeForecast(config_dict=config_dict, station=kwargs_dict.get("selected_station"), gas_type=kwargs_dict.get("selected_gas_type").lower(), _forecaster=kwargs_dict.get("forecaster"))  # type: ignore
 
             with tab1:
-                st.write(
-                    f"tab1 selected, short_id: {kwargs_dict.get('selected_station')}, language: {language_selection}"
-                )
                 st.markdown(
                     language_dict.get(selectedSideBar, {})
                     .get(language_selection)
@@ -70,9 +67,6 @@ def fill_main_frame(
                 st.altair_chart(chart, theme=None)  # type: ignore
 
             with tab2:
-                st.write(
-                    f"tab2 selected, short_id: {kwargs_dict.get('selected_station')}"
-                )
                 st.markdown(
                     language_dict.get(selectedSideBar, {})
                     .get(language_selection)

@@ -108,7 +108,7 @@ def create_forecast_chart(df: pd.DataFrame, language_selection: str) -> alt.Laye
     )
 
     df[legend_name] = np.where(df.is_last == 1, legend_forecast, legend_yesterday)
-    x_field, y_field = "time_string", "pred"
+    x_field, y_field = "hour_format", "pred"
 
     scale = alt.Scale(
         domain=[legend_forecast, legend_yesterday],
@@ -181,7 +181,7 @@ def create_bar_chart(df: pd.DataFrame, language_selection: str) -> alt.LayerChar
         .get(language_selection, {})
         .get("y_title_barchart", "")
     )
-    if x_field == "hour":
+    if x_field == "hour_format":
         x_axis_title: str = (
             language_dict.get("forecast", {})
             .get(language_selection, {})
@@ -194,6 +194,16 @@ def create_bar_chart(df: pd.DataFrame, language_selection: str) -> alt.LayerChar
             language_dict.get("forecast", {})
             .get(language_selection, {})
             .get("x_title_hour", "")
+        )
+        weekday_list = [
+            x
+            for x in language_dict.get("forecast", {})
+            .get(language_selection, {})
+            .get("weekday_list", [])
+        ]
+        # Transform x_field with the weekdays in the selected language
+        df[x_field] = df[x_field].apply(
+            lambda x: weekday_list[x] if isinstance(x, int) else x
         )
         bar_color = "#9F73AB"
         decimals = 3

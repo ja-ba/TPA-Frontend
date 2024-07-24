@@ -32,10 +32,11 @@ class Test_load_configs:
             "Ger"
         ) == provide_config_from_env[1].get("welcome_text", {}).get("Ger")
 
-    def test_create_config_from_env(self, provide_config_path):
+    def test_create_config_from_env(self, provide_config_path, provide_config_from_env):
         with patch(
             "tpa_frontend.config_handler.load_configs.load_config_dict"
         ) as mock_load_config_dict:
+            mock_load_config_dict.return_value = provide_config_from_env[0]
             create_config_from_env()
             mock_load_config_dict.assert_called_once_with(
                 todays_date=date.today(), config_path=provide_config_path

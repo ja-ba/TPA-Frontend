@@ -1,3 +1,4 @@
+import time
 from typing import Dict
 
 import numpy as np
@@ -52,8 +53,11 @@ def makeForecast(
     Returns:
         Dict[str, pd.DataFrame]: A dictionary mapping names to the different DataFrames resulting from the forecast.
     """
+    start = time.time()
     # Use the _forecaster to load the relevant df for station and gas_type
     _forecaster.load_df(station=station, sorte=gas_type)
+    print("Loading the df took: ", time.time() - start)
+    start = time.time()
     # Create the forecast
     forecast_df = _forecaster.create_forecast()
     # Filter the df on the last and previous date
@@ -63,27 +67,30 @@ def makeForecast(
     ].copy()
     # Fill the pred price with the actual price (for the previous date)
     forecast_df["pred"] = forecast_df["pred"].fillna(forecast_df["price"])
-    # Filter relevant column and format time_string
-    forecast_df = forecast_df[["Day_Hours", "pred", "is_last"]]
-    forecast_df["time_string"] = (
-        forecast_df["Day_Hours"].astype("str").str.slice(11, 16)
-    )
+    # Filter relevant columns
+    forecast_df = forecast_df[["Day_Hours", "pred", "is_last", "hour_format"]]
     # Add a space in front of the time_string to keep sortation by previous date and last date
-    forecast_df["time_string"] = np.where(
+    forecast_df["hour_format"] = np.where(
         forecast_df.is_last == 1,
-        forecast_df["time_string"],
-        " " + forecast_df["time_string"],
+        forecast_df["hour_format"],
+        " " + forecast_df["hour_format"],
     )
+
+    print("Finishing forecasting: ", time.time() - start)
     # Return DataFrames as a dict
     return {
         "forecast_df": forecast_df,
-        "summary_weekday_df": _forecaster.create_summaries(groupCol="day_of_week")
+        "summary_weekday_df": _forecaster.create_summaries(
+            groupCol="day_of_week", centralize_mean=True
+        )
         .reset_index()
         .rename(columns={"price": "diff"}),
-        "summary_hour_df": _forecaster.create_summaries(groupCol="hour")
+        "summary_hour_df": _forecaster.create_summaries(
+            groupCol="hour_format", centralize_mean=True
+        )
         .reset_index()
         .rename(columns={"price": "diff"}),
         "summary_trend_df": _forecaster.create_summaries(
-            groupCol="trend"
+            groupCol="week", centralize_mean=False
         ).reset_index(),
     }

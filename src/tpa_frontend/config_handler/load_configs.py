@@ -79,11 +79,17 @@ def load_language_config_dict(config_dict: dict) -> dict:
         # Load the YAML data
         language_dict: dict = yaml.safe_load(file)
 
+    # Add leading spaces to the weekday_list for formatting in the relevant graph
+    for forecast_dict in language_dict.get("forecast", {}).values():
+        weekday_list = forecast_dict.get("weekday_list")
+        for i in range(len(weekday_list)):
+            weekday_list[i] = " " * (len(weekday_list) - i) + weekday_list[i]
+
     return language_dict
 
 
 def create_config_from_env() -> Tuple[dict, dict]:
-    """A function that loads the app and language connfict based on the environment variable "CONFIG_PATH" and returns them as a tuple.
+    """A function that loads the app and language config based on the environment variable "CONFIG_PATH" and returns them as a tuple.
 
     Returns:
         Tuple[dict, dict]: A tuple containing the app config and the language dict.

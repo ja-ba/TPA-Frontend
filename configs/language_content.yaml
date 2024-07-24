@@ -47,15 +47,15 @@ sidebar_upper:
     Auswahl : 0
     Wilkommen: "welcome"
     Prognose: "forecast"
-    Karten (coming soon...): "maps"
-    Freie Analyse (coming soon...): "free"
+    # Karten (coming soon...): "maps"
+    # Freie Analyse (coming soon...): "free"
   Eng :
     Selection : 0
     Welcome: "welcome"
     Forecast: "forecast"
-    Maps (coming soon...): "maps"
-    Free Deep Dive (coming soon...): "free"
-  symbols: ["house", "bar-chart-line", "map", "rulers"]
+    # Maps (coming soon...): "maps"
+    # Free Deep Dive (coming soon...): "free"
+  symbols: ["house", "bar-chart-line"] # , "map", "rulers"
 
 sidebar_lower:
   forecast:
@@ -78,11 +78,13 @@ forecast:
     chart_title_hour: "Preiseinfluss: Tageszeit"
     x_title_hour: "Tageszeit"
     chart_title_weekday: "Preiseinfluss: Wochentag"
+    x_title_weekday : "Wochentag"
     chart_title_trend: "Langfristiger Trend"
     x_title_trend: "Kalenderwoche"
     legend_forecast: "Vorhersage Preis"
-    legend_yesterday: "Tatsächlicher Preis in letzten 24h"
+    legend_yesterday: "Tatsächlicher Preis<br>in letzten 24h"
     legend_name: "Legende"
+    weekday_list: ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"]
     tbd11: "⚠️ Das hat leider nicht geklappt. Für die ausgewählte Tankstelle und/oder Sorte gibt es keine Daten. Bitte versuche eine andere Tankstelle oder Sorte! ⚠️"
     tbd12: "⚡ Die Berechnung dieses Models hat "
     tbd13: " Sekunden gedauert ⚡"
@@ -100,11 +102,13 @@ forecast:
     chart_title_hour: "Price influence: Time of day"
     x_title_hour: "Time of day"
     chart_title_weekday: "Price influence: Weekday"
+    x_title_weekday : "Day of week"
     chart_title_trend: "Long-term trend"
     x_title_trend: "Calendar week"
     legend_forecast: "Forecasted price"
-    legend_yesterday: "Actual price in the last 24h"
+    legend_yesterday: "Actual price in<br>the last 24h"
     legend_name: "Legend"
+    weekday_list: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     tbd11: "⚠️ Unfortunately, there is no data for the selected gas station and/or type. Please try another gas station or type! ⚠️"
     tbd12: "⚡ The calculation of this model took "
     tbd13: " seconds ⚡"

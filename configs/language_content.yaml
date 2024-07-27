@@ -1,46 +1,59 @@
 welcome_text:
   Ger: >
-    ## ⛽ Willkommen zur Spritpreis App ⛽
+    ## ⛽ Willkommen zum Benzinpreis Forecaster ⛽
 
-    In Zeiten steigender Spritpreise soll diese App Transparenz im deutschen Spritpreis Dschungel schaffen und dabei helfen billiger zu tanken. Dazu werden öffentlich verfügbare Daten (Nutzung der Open-Data Schnittstelle von [Tankerkönig](https://creativecommons.tankerkoenig.de/)) zu den Spritpreisen aller Tankstellen verarbeitet und für verschiedene interaktive Analysen bereitgestellt.
-
+    Die Benzinpreise an deutschen Tankstellen verändern sich mehrmals täglich mit Teils extremen Preissprüngen. Daneben tragen langfristige Trends der Ölmärkte zur Intransparenz der Benzinpreise bei. Ziel dieser App ist daher, euch zu helfen mehr Transparenz über die Preise eurer Tankestelle(n) zu liefern, damit ihr günstiger tanken könnt.
+    
+  
     Aktuell unterstützt die App folgende Features:
 
+    * **Prognose:** Sehe den prognostizierten Benzinpreisverlauf der nächsten 24h für deine Tankstelle. Daneben findest du weitere spannende Insights zu den Benzinpreisen deiner Tankstelle.
 
+    * **Karten:** 🚧 Coming soon. 🚧
 
-    *   **Prognose:** für jede Tankstelle in Deutschland wird der Spritpreisverlauf der nächsten 24h durch ein statistisches Echtzeit-Modell vorhergesagt. Neben den prognostizierten Preisen, sind auch die Einflussfaktoren ersichtlich. Dadurch ist einfach ersichtlich mit welchen Preisen Sie in nächster Zeit an einer bestimmten Tankstelle rechnen können und zu welchen Tages- und Uhrzeiten das Tanken an  dieser Tankstelle sich generell lohnt.
-
-    *   **Karten:** Auf einer Karte wird ersichtlich wie günstig oder teuer die Spritpreise in verschiedenen Regionen Deutschlands sind. Die Karte is beliebig zoombar und ermöglicht es bspw. die günstigste Tankstelle in einem Ort zu finden oder zu sehen in welchen Teilen Deutschlands das Tanken eher günstig/teuer ist. Die Karte ist auch für vergangene Wochen verfügbar um die Auswirkungen saisonaler Ereignisse (z.B. Ferienzeit oder Lieferengpässe durch niedrige FLussstände) zu sehen.
-
-    *   **Freie Analyse (comming soon):** Lassen Sie sich den Preisverlauf für bis zu 10 Tankstellen anzeigen und aggregieren und filtern Sie einfach nach Monaten, Wochen oder Tagen.
+    * **Freie Analyse:** 🚧 Coming soon. 🚧
 
 
     Viele Spaß bei der Nutzung der App!
 
+    <div class="info-box">
+    Die App wurde mit Hilfe der offenen API von [Tankerkönig](https://creativecommons.tankerkoenig.de/)) umgesetzt. Die App besteht aus verschiedenen (selbst-entwickelten) Services, deren Source Code hier einsehbar ist: 
+
+    - [Cloud Storage Wrapper](https://github.com/ja-ba/Cloud-Storage-Wrapper): ein Wrapper Package zum Datenaustausch mit der (kostenlosen) Oracle Cloud.
+    - [TPA-Data-Processor](https://github.com/ja-ba/TPA-Data-Processor): Implementiert die ETL Strecken über [Apache Airflow](https://airflow.apache.org/) 
+    - [TPA-Analytics-Engine](https://github.com/ja-ba/TPA-Analytics-Engine): eine Engine zur Echtzeitprognose der Benzinpreise.
+    - [TPA-Frontend](https://github.com/ja-ba/TPA-Frontend): Implementiert das Frontend der App in [Streamlit](https://streamlit.io/)
+    </div>
 
     Ich freue mich über Feedback, Hinweise auf Bugs und Verbesserungsvorschläge an : jakobs.dataprojects@gmail.com
 
   Eng: >
-    ## ⛽ Welcome to the gasprice app ⛽
-
-    In times of rising gas prices, this app aims at making the german gas market more transparent and helping you to gas up more cheaply. To achieve this, opensource data (specifically the great API from  [Tankerkönig](https://creativecommons.tankerkoenig.de/)) on gas prices from all german gas stations is processed and used for various interactive insights.
-
-
-    At the moment, the app has the following features:
+    ## ⛽ Welcome to the Gas Price Forecaster ⛽
+    Gas prices at German gas stations change several times a day with often extreme price jumps. In addition, long-term trends in the crude oil market contribute to the lack of transparency in gas prices. The goal of this app is to help you gain more transparency over the prices at your gas station(s) so that you can refuel more cheaply.
 
 
+    Currently, the app supports the following features:
 
-    *   **Forecast:** for each german gas station, the price development is forecasted for the next 24 hours based on a stastical real-time model. Besides the forecasted prices, you can also see which factors influence the price developoment. With this information you know which prices to expect at your favorite gas station today and you also learn at which daytimes or weekdays you can gas-up for the cheapest prices.
+    * **Forecast:** See the predicted gas price trend for the next 24 hours for your gas station. You will also find other exciting insights about the gas prices at your gas station.
 
-    *   **Maps:** A map shows you how expensive or cheap the gas prices are for different regions of germany. You can zoom into the map to find the cheapest gas stations in a town or explore which areas of Germany have the cheapest gas prices. The map is also available for past weeks, so that you can observe seasonal effects (e.g. holidays or supply-shortages due to low tides on german rivers)
+    * **Maps:** 🚧 Coming soon. 🚧
 
-    *   **Free Deep Dive (comming soon):** Get past price developments for up to 10 gas stations and aggregate and filter on months, weeks and days.
-
-
-    I hope you enjoy using this app!
+    * **Free Analysis:** 🚧 Coming soon. 🚧
 
 
-    I'm looking forward to your feedback, bug reports and ideas for improvement at: jakobs.dataprojects@gmail.com
+    Have fun using the app!
+
+    The app was implemented with the help of the open API from [Tankerkönig](https://creativecommons.tankerkoenig.de/). The app consists of various (self-developed) services, whose source code can be viewed here:
+
+    <div class="info-box">
+    - [Cloud Storage Wrapper](https://github.com/ja-ba/Cloud-Storage-Wrapper): a wrapper package for data exchange with the (free) Oracle Cloud.
+    - [TPA-Data-Processor](https://github.com/ja-ba/TPA-Data-Processor): Implements the ETL pipelines via [Apache Airflow](https://airflow.apache.org/)
+    - [TPA-Analytics-Engine](https://github.com/ja-ba/TPA-Analytics-Engine): an engine for real-time gas price forecasting.
+    - [TPA-Frontend](https://github.com/ja-ba/TPA-Frontend): Implements the app's frontend in [Streamlit](https://streamlit.io/)
+    </div>
+
+    I appreciate feedback, bug reports, and suggestions for improvement at: jakobs.dataprojects@gmail.com
+
 
 sidebar_upper:
   Ger :

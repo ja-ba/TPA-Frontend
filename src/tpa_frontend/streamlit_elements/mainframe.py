@@ -1,8 +1,10 @@
 import pandas as pd
 import streamlit as st
+import streamlit.components.v1 as components
 from tpa_frontend.charts.create import create_bar_chart
 from tpa_frontend.charts.create import create_forecast_chart
 from tpa_frontend.charts.create import create_trend_chart
+from tpa_frontend.data_loader.load import getMapDict
 from tpa_frontend.data_loader.load import makeForecast
 
 
@@ -90,3 +92,12 @@ def fill_main_frame(
                     .get("chart_title_trend")
                 )
                 st.altair_chart(create_trend_chart(df=forecast_summary_dict.get("summary_trend_df"), language_selection=language_selection), use_container_width=True)  # type: ignore
+
+    if selectedSideBar == "maps":
+        # Create the maps:
+        mapDict = getMapDict(config_dict=config_dict, last_week=kwargs_dict.get("last_week"), _files_oci_connection=kwargs_dict.get("filesOCI"))  # type: ignore
+
+        # Display the page according to the selected_gas_type
+        components.html(
+            mapDict[kwargs_dict.get("selected_gas_type", "").lower()], height=700
+        )

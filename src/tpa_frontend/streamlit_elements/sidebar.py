@@ -1,5 +1,6 @@
 from typing import Literal
 from typing import Optional
+from typing import Union
 
 import streamlit as st
 from streamlit_option_menu import option_menu
@@ -69,7 +70,7 @@ def sidebar_lower_content(
     language_selection: str,
     selectedSideBar: str,
     station_dict: dict = {},
-) -> Optional[tuple]:
+) -> Optional[Union[tuple, str]]:
     """A function to dynamically create the  lower part of the sidebar depending on the selected sidebar element.
 
     Args:
@@ -101,10 +102,22 @@ def sidebar_lower_content(
             .get(language_selection)[2],
             options=["E5", "E10", "Diesel"],
             horizontal=True,
-            key="SELECT_gas_type",
+            key="SELECT_gas_type_forecast",
         )
 
         return (selected_station, selected_gas_type)
+
+    elif selectedSideBar == "maps":
+        selected_gas_type = st.radio(
+            label=language_dict.get("sidebar_lower", {})
+            .get(selectedSideBar)
+            .get(language_selection),
+            options=["E5", "E10", "Diesel"],
+            horizontal=True,
+            key="SELECT_gas_type_map",
+        )
+
+        return selected_gas_type
 
     else:
         return None

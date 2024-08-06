@@ -4,6 +4,8 @@ from typing import Tuple
 
 import streamlit as st
 import yaml  # type: ignore
+from cloud_storage_wrapper.oci_access.config import OCI_Config_Base
+from cloud_storage_wrapper.oci_access.files import FilesOCI
 from cloud_storage_wrapper.oci_access.pandas import create_PandasOCI_from_dict
 from cloud_storage_wrapper.oci_access.pandas import PandasOCI
 from tpa_analytics_engine.api import Forecast
@@ -49,13 +51,27 @@ def create_pandasOCI(config_dict: dict) -> PandasOCI:
 
 
 @st.cache_resource  # This caches accross all sessions
+def create_filesOCI(config_dict: dict) -> FilesOCI:
+    """
+    This function provides a FilesOCI object based on the provided config_dict.
+
+    Args:
+        config_dict (dict): A dictionary containing the app configuration.
+
+    Returns:
+        FilesOCI: An instance of FilesOCI created from the config_dict.
+    """
+    configDict_Base = OCI_Config_Base(**config_dict["oci_config"]).model_dump()
+    return FilesOCI(**configDict_Base)
+
+
+@st.cache_resource  # This caches accross all sessions
 def create_Forecast(todays_date: date) -> Forecast:
     """
     This function provides a `Forecast` object based on the config path.
 
     Args:
         todays_date (date): A date, this argument is not used but enables streamlit caching which is refreshed daily.
-        _config_path (str): The path to the config file.
 
     Returns:
         Forecast: An instance of `Forecast` created using the configuration file located at "configs/config.yaml".

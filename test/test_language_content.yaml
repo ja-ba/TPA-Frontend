@@ -3,28 +3,29 @@ welcome_text:
     ## TEST GERMAN
   Eng: >
     ## TEST ENGLISH
+
 sidebar_upper:
   Ger :
     Auswahl : 0
     Wilkommen: "welcome"
     Prognose: "forecast"
-    # Karten (coming soon...): "maps"
+    Karten: "maps"
     # Freie Analyse (coming soon...): "free"
   Eng :
     Selection : 0
     Welcome: "welcome"
     Forecast: "forecast"
-    # Maps (coming soon...): "maps"
+    Maps : "maps"
     # Free Deep Dive (coming soon...): "free"
-  symbols: ["house", "bar-chart-line"] # , "map", "rulers"
+  symbols: ["house", "bar-chart-line", "map"] #, "rulers"
 
 sidebar_lower:
   forecast:
     Ger: ["Bitte wählen Sie eine Tankstelle aus? Tippen Sie einfach einen Namen, Ort oder PLZ in das Feld", "Sie können z.B, 'Shell Bonner Str.' eingeben um eine konkrete Tankstelle zu suchen oder '12057' eingeben um alle Tankstellen in diesem PLZ Gebiet angezeigt zu bekommen", "Bitte wählen Sie eine Sorte?", "Neue Tankstellen Suche"]
-    Eng: ["Bitte wählen Sie eine Tankstelle aus? Tippen Sie einfach einen Namen, Ort oder PLZ in das Feld", "Sie können z.B, 'Shell Bonner Str.' eingeben um eine konkrete Tankstelle zu suchen oder '12057' eingeben um alle Tankstellen in diesem PLZ Gebiet angezeigt zu bekommen", "Bitte wählen Sie eine Sorte?", "Neue Tankstellen Suche"]
+    Eng: ["Please select a gas station by typing a name, location or postal code", "You can type e.g. 'Shell Bonner Str.' to search for a specific gas station or '12057' to show all gas stations in this postal code area", "Please select a gas type?", "New Gas Station Search"]
   maps:
-    Ger: ["Bitte wählen Sie eine Woche aus!"]
-    Eng: ["Bitte wählen Sie eine Woche aus!"]
+    Ger: "Bitte wählen Sie eine Woche aus!"
+    Eng: "Please select a week!"
 
 forecast:
   Ger:
@@ -73,6 +74,7 @@ forecast:
     tbd11: "⚠️ Unfortunately, there is no data for the selected gas station and/or type. Please try another gas station or type! ⚠️"
     tbd12: "⚡ The calculation of this model took "
     tbd13: " seconds ⚡"
+
 markdown:
   german_flag: >
     <style>

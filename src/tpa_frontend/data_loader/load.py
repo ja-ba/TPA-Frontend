@@ -4,6 +4,7 @@ from typing import Dict
 import numpy as np
 import pandas as pd
 import streamlit as st
+from cloud_storage_wrapper.oci_access.files import FilesOCI
 from cloud_storage_wrapper.oci_access.pandas import PandasOCI
 from tpa_analytics_engine.api import Forecast
 
@@ -94,3 +95,27 @@ def makeForecast(
             groupCol="week", centralize_mean=False
         ).reset_index(),
     }
+
+
+@st.cache_resource  # This caches accross all sessions
+def getMapDict(
+    config_dict: dict, last_week: str, _files_oci_connection: FilesOCI
+) -> dict:
+    """_summary_
+
+    Args:
+        config_dict (dict): _description_
+        last_week (str): _description_
+        _files_oci_connection (FilesOCI): _description_
+
+    Returns:
+        dict: _description_
+    """
+    mapDict = {}
+    for gas_type in ("e5", "e10", "diesel"):
+        mapDict[gas_type] = _files_oci_connection.retrieve_file_content(
+            file_name=f"{config_dict.get('map_config', {}).get('map_path', '')}/Map_{gas_type}_{last_week}.html",
+            decode=True,
+        )
+
+    return mapDict

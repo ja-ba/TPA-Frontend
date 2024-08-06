@@ -52,6 +52,18 @@ def provide_Forecast_page(provide_config_from_env):
 
 
 @pytest.fixture(scope="session")
+def provide_Map_page(provide_config_from_env):
+    main_patched = Path("src/tpa_frontend/main.py").read_text()
+    main_patched = main_patched.replace(
+        "selectedSideBar=selectedSideBar", "selectedSideBar='maps'"
+    ).replace('selectedSideBar == "maps"', "True")
+
+    test_app = AppTest.from_string(main_patched)
+    test_app.run(timeout=60)
+    return test_app
+
+
+@pytest.fixture(scope="session")
 def provide_station_list_forecast(provide_config_from_env, provide_pandasOCI):
     base_df_dict = loadBaseDFs(
         config_dict=provide_config_from_env[0], _pandas_connection=provide_pandasOCI

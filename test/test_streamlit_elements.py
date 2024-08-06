@@ -24,7 +24,9 @@ def test_Forecast_page(
 
     # Click through the lower buttons
     for gas_type in ("E10", "E5", "Diesel"):
-        provide_Forecast_page.radio(key="SELECT_gas_type").set_value(gas_type).run()
+        provide_Forecast_page.radio(key="SELECT_gas_type_forecast").set_value(
+            gas_type
+        ).run()
         assert not provide_Forecast_page.exception
 
     # Enter a station to check that forecasting works
@@ -34,3 +36,14 @@ def test_Forecast_page(
     assert not provide_Forecast_page.exception
 
     assert len(provide_Forecast_page.tabs) == 2
+
+
+def test_Map_page(provide_Map_page):
+    assert not provide_Map_page.exception
+
+    # Click through the lower buttons
+    for gas_type in ("E10", "E5", "Diesel"):
+        provide_Map_page.radio(key="SELECT_gas_type_map").set_value(gas_type).run(
+            timeout=60
+        )
+        assert not provide_Map_page.exception

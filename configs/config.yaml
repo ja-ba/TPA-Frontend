@@ -7,9 +7,9 @@ oci_config:
   region: "eu-frankfurt-1"
   bucket_name: "Tankpreis_Data"
   compartment_id: "jakobsdataprojects"
-  key_file: "test/example_key.pem"
+  key_file: ""
   direct_key: ""
-  env_key: ""
+  env_key: "OCI_KEY"
 
 df_config:
   station_info:

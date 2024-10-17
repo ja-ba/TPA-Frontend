@@ -1,0 +1,1 @@
+tpa_frontend @ git+https://github.com/ja-ba/TPA-Frontend.git@main

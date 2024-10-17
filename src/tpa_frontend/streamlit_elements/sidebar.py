@@ -1,4 +1,3 @@
-from typing import Literal
 from typing import Optional
 from typing import Union
 
@@ -36,33 +35,35 @@ def createSidebar(language_dict: dict, language_selection: str) -> str:
     )
 
 
-def createLanguageSelection(language_dict: dict) -> Literal["Ger", "Eng"]:
+def createLanguageSelection(language_dict: dict) -> str:
     """A function creating the language selection in the upper left side bar.
 
     Args:
         language_dict (dict): A dictionary containing the language configuration.
 
     Returns:
-        Literal["Ger", "Eng"]: The values of the language selection (either 'Ger' or 'Eng').
+        str: The values of the language selection (either 'Ger' or 'Eng').
     """
 
     # Set markdowns for flags
     st.markdown(
-        language_dict.get("markdown", {}).get("german_flag"), unsafe_allow_html=True
+        language_dict.get("markdown", {}).get("english_flag"), unsafe_allow_html=True
     )
     st.markdown(
-        language_dict.get("markdown", {}).get("english_flag"), unsafe_allow_html=True
+        language_dict.get("markdown", {}).get("german_flag"), unsafe_allow_html=True
     )
 
     # Language selection via the previously specified flags
     language_selection = st.radio(
-        label="Sprache/Language",
-        options=[" ", "  "],
+        label="Language",
+        options=["Eng", "Ger"],
+        format_func=lambda x: " "
+        if x == "Eng"
+        else "  ",  # display an empty option label, so that text doesn't overlay flag
         horizontal=True,
         key="SELECT_language",
     )
-
-    return "Ger" if language_selection == " " else "Eng"
+    return language_selection or ""
 
 
 def sidebar_lower_content(

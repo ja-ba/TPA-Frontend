@@ -2,12 +2,12 @@ welcome_text:
   Ger: >
     ## ⛽ Willkommen zum Benzinpreis Forecaster ⛽
 
-    Die Benzinpreise an deutschen Tankstellen verändern sich mehrmals täglich mit Teils extremen Preissprüngen. Daneben tragen langfristige Trends der Ölmärkte zur Intransparenz der Benzinpreise bei. Ziel dieser App ist daher, euch zu helfen mehr Transparenz über die Preise eurer Tankestelle(n) zu liefern, damit ihr günstiger tanken könnt.
+    Die Benzinpreise an deutschen Tankstellen verändern sich mehrmals täglich mit Teils starken Preissprüngen. Daneben tragen langfristige Trends der Ölmärkte zur Intransparenz der Benzinpreise bei. Ziel dieser App ist daher, euch zu helfen mehr Transparenz über die Preise eurer Tankestelle(n) zu liefern, damit ihr günstiger tanken könnt.
 
 
     Aktuell unterstützt die App folgende Features:
 
-    * **Prognose:** Sehe den prognostizierten Benzinpreisverlauf der nächsten 24h für deine Tankstelle. Daneben findest du weitere spannende Insights zu den Benzinpreisen deiner Tankstelle.
+    * **Prognose:** Sehe den prognostizierten Benzinpreisverlauf der nächsten 24h für deine Tankstelle. Der zweite Tab liefert Informationen zu den Preiseinflüssen dieser Tankstelle.
 
     * **Karten:** Erhalte einen geographischen Überblick über die Benzinpreise in Deutschland und deiner Region.
 
@@ -30,14 +30,14 @@ welcome_text:
   Eng: >
     ## ⛽ Welcome to the Gas Price Forecaster ⛽
 
-    Gas prices at German gas stations change several times a day with often extreme price jumps. In addition, long-term trends in the crude oil market contribute to the lack of transparency in gas prices. The goal of this app is to help you gain more transparency over the prices at your gas station(s) so that you can refuel more cheaply.
+    Gas prices at German gas stations change several times a day with often extreme price jumps. In addition, long-term trends in the crude oil market contribute to the lack of transparency in gas prices. The goal of this app is to help you gain more transparency over the prices at your gas station(s) so that you can save on tank fills.
 
 
     Currently, the app supports the following features:
 
-    * **Forecast:** See the predicted gas price trend for the next 24 hours for your gas station. You will also find other exciting insights about the gas prices at your gas station.
+    * **Forecast:** See the forecasted gas price curve for the next 24 hours for your gas station. The second tab will provide insights about the gas price patterns at your gas station.
 
-    * **Maps:** Get a geographical overview of the gas prices in Germany and your region.
+    * **Maps:** Get a geographical overview of the gas prices in Germany and your region to find the cheapest gas station.
 
 
     Have fun using the app!
@@ -131,7 +131,7 @@ markdown:
   german_flag: >
     <style>
     div:nth-child(3) > div > div > label:nth-child(1) > div:nth-child(3) {
-      background-image: url("https://cdn-icons-png.flaticon.com/512/330/330523.png");
+      background-image: url("https://cdn-icons-png.flaticon.com/512/3013/3013911.png");
       background-size: cover;
       font-size: 0;
       height: 30px;
@@ -141,7 +141,7 @@ markdown:
   english_flag: >
     <style>
     div:nth-child(3) > div > div > label:nth-child(2) > div:nth-child(3) {
-      background-image: url("https://cdn-icons-png.flaticon.com/512/3013/3013911.png");
+      background-image: url("https://cdn-icons-png.flaticon.com/512/330/330523.png");
       background-size: cover;
       font-size: 0;
       height: 30px;

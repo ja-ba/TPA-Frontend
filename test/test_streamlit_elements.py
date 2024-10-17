@@ -5,12 +5,13 @@ def test_app(provide_App):
 def test_language_switch(provide_App, provide_config_from_env):
     assert provide_App.markdown[0].value == provide_config_from_env[1].get(
         "welcome_text"
-    ).get("Ger").replace("\n", "")
+    ).get("Eng").replace("\n", "")
 
-    provide_App.radio(key="SELECT_language").set_value("  ").run()
+    provide_App.radio(key="SELECT_language").set_value("Ger").run()
+
     assert provide_App.markdown[0].value == provide_config_from_env[1].get(
         "welcome_text"
-    ).get("Eng").replace("\n", "")
+    ).get("Ger").replace("\n", "")
 
 
 def test_Forecast_page(
@@ -19,7 +20,7 @@ def test_Forecast_page(
     language_dict = provide_config_from_env[1]
     assert not provide_Forecast_page.exception
     assert provide_Forecast_page.text[0].value == language_dict.get("forecast", {}).get(
-        "Ger"
+        "Eng"
     ).get("please_choose")
 
     # Click through the lower buttons
